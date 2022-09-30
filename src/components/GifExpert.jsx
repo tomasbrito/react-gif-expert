@@ -1,17 +1,15 @@
 import { useState } from 'react'
-import { AddCategory } from './components/AddCategory'
-import { GifGrid } from './components/GifGrid'
+import { AddCategory } from './AddCategory'
+import { GifGrid } from './GifGrid'
 
 export const GifExpertApp = () => {
 
-    const [categories, setCategories] = useState(['Benedetto'])
+    const [categories, setCategories] = useState(['Futbol'])
 
 
     const onAddCategory = (newCategory) => {
 
         if (categories.includes(newCategory)) return;
-
-        console.log(newCategory)
         setCategories([newCategory, ...categories])
     }
 

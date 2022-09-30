@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import PropTypes from 'prop-types'
 
 
 export const AddCategory = ( {onNewCategory} ) => {
@@ -19,7 +20,8 @@ export const AddCategory = ( {onNewCategory} ) => {
     }
 
     return (
-        <form onSubmit={ (event) => onSubmit(event) }>
+                        //tmb se puede escribir {onSubmit}. Recibe y envia el primer parametro que recibe osea el evento
+        <form onSubmit={ (event) => onSubmit(event) } aria-label="form">
             <input type="text"
                 placeholder="Buscar gifs"
                 value={inputValue}
@@ -27,4 +29,8 @@ export const AddCategory = ( {onNewCategory} ) => {
             />
         </form>
     )
+}
+
+AddCategory.propTypes = {
+    onNewCategory: PropTypes.func.isRequired
 }
